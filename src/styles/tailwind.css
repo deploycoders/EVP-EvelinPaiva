@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Montserrat:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+
+  body {
+    @apply m-0 font-body text-evp-body;
+    background: radial-gradient(circle at top right, #fff8f3 0%, #F7F3F0 42%);
+  }
+}
+
+@layer components {
+  .section-shell {
+    @apply mt-10 rounded-2xl border border-evp-border bg-evp-section p-6 shadow-soft md:p-8;
+  }
+}
