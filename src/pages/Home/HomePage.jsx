@@ -15,9 +15,9 @@ function HomePage() {
       <HeroSection />
       <ManifestoBannerSection />
       <AboutSection />
+      <ServicesSection />
 
       <main className="mx-auto w-[92%] max-w-6xl px-0 py-10 pb-16">
-        <ServicesSection />
         <PortfolioSection />
         <TestimonialsSection />
         <ContactSection />

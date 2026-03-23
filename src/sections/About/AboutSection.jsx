@@ -59,11 +59,11 @@ function AboutSection() {
           </article>
 
           <article className="relative w-full md:max-w-[430px] lg:justify-self-end">
-            <div className="aspect-[4/5] w-full overflow-hidden border border-evp-border bg-evp-section">
+            <div className="aspect-[4/5] w-full overflow-hidden border rounded-md border-evp-border bg-evp-section">
               <img
-                src="/images/home/home.png"
+                src="/images/about/evelyn_about.webp"
                 alt="Editorial portrait placeholder for the about section"
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover object-top"
               />
             </div>
 
@@ -104,7 +104,7 @@ function AboutSection() {
         </div>
       </div>
 
-      <div className="border-t border-evp-border bg-evp-bg">
+      <div className="border-t py-20 border-evp-border bg-evp-bg">
         <div className="mx-auto w-[92%] max-w-5xl py-16 text-center md:py-20">
           <div className="mx-auto mb-6 flex h-7 w-7 items-center justify-center text-evp-accent">
             <svg
