@@ -3,11 +3,11 @@ import { testimonials } from "@/data/siteContent";
 
 function TestimonialsSection() {
   return (
-    <section id="testimonios" className="section-shell bg-evp-section">
+    <section id="testimonials" className="section-shell bg-evp-section">
       <SectionTitle
-        eyebrow="Testimonios"
-        title="Sección Testimonios | Prueba social"
-        description="Texto inicial para validar estructura de confianza y reputación de marca."
+        eyebrow="Testimonials"
+        title="Testimonials Section | Social proof"
+        description="Initial text to validate trust structure and brand reputation."
       />
       <div className="grid gap-4">
         {testimonials.map((item) => (

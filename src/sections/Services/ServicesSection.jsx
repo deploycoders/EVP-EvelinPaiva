@@ -3,11 +3,11 @@ import { services } from "@/data/siteContent";
 
 function ServicesSection() {
   return (
-    <section id="servicios" className="section-shell bg-evp-section">
+    <section id="services" className="section-shell bg-evp-section">
       <SectionTitle
-        eyebrow="Servicios"
-        title="Sección Servicios | Oferta principal"
-        description="Texto inicial para listar servicios estratégicos y alcance de cada uno."
+        eyebrow="Services"
+        title="Services Section | Core offer"
+        description="Initial text to list strategic services and each service scope."
       />
       <ul className="m-0 grid gap-3 pl-5">
         {services.map((item) => (

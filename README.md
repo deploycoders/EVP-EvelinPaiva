@@ -1,6 +1,6 @@
 # EVP - Evelin Paiva (React + Tailwind)
 
-Landing base construida con **React (JavaScript)**, **Vite** y **Tailwind CSS**, organizada por secciones reutilizables y lista para escalar.
+Base landing page built with **React (JavaScript)**, **Vite**, and **Tailwind CSS**, organized into reusable sections and ready to scale.
 
 ## Stack
 
@@ -9,9 +9,9 @@ Landing base construida con **React (JavaScript)**, **Vite** y **Tailwind CSS**,
 - React Router DOM 6
 - Tailwind CSS 3 + PostCSS + Autoprefixer
 
-## Paleta de Colores (Brand)
+## Brand Color Palette
 
-Definida en `tailwind.config.js` dentro de `theme.extend.colors.evp`.
+Defined in `tailwind.config.js` under `theme.extend.colors.evp`.
 
 - `evp.bg`: `#F7F3F0`
 - `evp.section`: `#EFE9E4`
@@ -21,7 +21,7 @@ Definida en `tailwind.config.js` dentro de `theme.extend.colors.evp`.
 - `evp.body`: `#575757`
 - `evp.border`: `#D9C5B2`
 
-## Estructura del Proyecto
+## Project Structure
 
 ```txt
 .
@@ -43,84 +43,86 @@ Definida en `tailwind.config.js` dentro de `theme.extend.colors.evp`.
 └─ vite.config.js
 ```
 
-## Requisitos
+## Requirements
 
-- Node.js 20+ (recomendado 22)
+- Node.js 20+ (22 recommended)
 - npm 10+
 
-## Instalación y Ejecución
+## Installation and Run
 
 ```bash
 npm install
 npm run dev
 ```
 
-Aplicación local: `http://localhost:5173`
+Local app: `http://localhost:5173`
 
-## Scripts Disponibles
+## Available Scripts
 
 ```bash
-npm run dev      # entorno de desarrollo
-npm run build    # build de producción
-npm run preview  # previsualizar build local
+npm run dev      # development server
+npm run build    # production build
+npm run preview  # preview production build
 ```
 
-## Configuración Tailwind
+## Tailwind Setup
 
-- Archivo principal: `src/styles/tailwind.css`
-- Configuración theme: `tailwind.config.js`
-- Clases personalizadas por componente en JSX
-- Clase reutilizable de secciones: `section-shell`
+- Main stylesheet: `src/styles/tailwind.css`
+- Theme config: `tailwind.config.js`
+- Utility classes directly in JSX
+- Reusable section utility class: `section-shell`
 
-## Rutas
+## Routes
 
-Definidas en `src/app/router/AppRouter.jsx`.
+Defined in `src/app/router/AppRouter.jsx`.
 
 - `/` -> Home
-- `/inicio` -> redirige a `/`
+- `/home` -> redirects to `/`
+- `/inicio` -> redirects to `/` (legacy)
 - `*` -> NotFound
 
-## Secciones Iniciales
+## Initial Sections
 
 - Hero
-- Sobre mí
-- Servicios
-- Portafolio
-- Testimonios
-- Contacto
+- Manifesto Banner
+- About
+- Services
+- Portfolio
+- Testimonials
+- Contact
 
-Todas están en `src/sections/*` y listas para reemplazar contenido.
+All sections are under `src/sections/*` and ready for content replacement.
 
-## Variables de Entorno
+## Environment Variables
 
-1. Copia el archivo de ejemplo:
+1. Copy the example file:
 
 ```bash
 cp .env.example .env
 ```
 
-En Windows PowerShell:
+In Windows PowerShell:
 
 ```powershell
 Copy-Item .env.example .env
 ```
 
-2. Ajusta valores según tu entorno.
+2. Update values for your environment.
 
-## Subir a tu repositorio GitHub
+## Push to GitHub
 
-Si es un repo nuevo:
+If this is a new repository:
 
 ```bash
 git init
 git add .
 git commit -m "feat: initial React + Tailwind EVP structure"
 git branch -M main
-git remote add origin https://github.com/TU-USUARIO/TU-REPO.git
+git remote add origin https://github.com/YOUR-USER/YOUR-REPO.git
 git push -u origin main
 ```
 
-Si ya existe remoto y solo quieres actualizar:
+If remote already exists and you only need to update:
 
 ```bash
 git add .
@@ -128,16 +130,16 @@ git commit -m "chore: project setup and docs"
 git push
 ```
 
-## Build de Producción
+## Production Build
 
 ```bash
 npm run build
 ```
 
-Salida generada en `dist/`.
+Output folder: `dist/`.
 
-## Notas
+## Notes
 
-- `node_modules/` y `dist/` están ignorados por Git.
-- El proyecto está en JavaScript (sin TypeScript), como solicitaste.
-- Puedes extender el tema en `tailwind.config.js` sin romper la estructura actual.
+- `node_modules/` and `dist/` are ignored by Git.
+- The project uses JavaScript only (no TypeScript).
+- You can safely extend design tokens in `tailwind.config.js`.

@@ -7,6 +7,7 @@ function AppRouter() {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/inicio" element={<Navigate to="/" replace />} />
+      <Route path="/home" element={<Navigate to="/" replace />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );

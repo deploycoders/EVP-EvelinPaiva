@@ -1,24 +1,57 @@
 import PrimaryButton from "@/components/common/PrimaryButton/PrimaryButton";
+import SecondaryButton from "@/components/common/SecondaryButton/SecondaryButton";
 
+/**
+ * HeroSection - Minimal, editorial hero section
+ *
+ * Architecture:
+ * - Mobile-first responsive design
+ * - Background image with semi-transparent overlay for legibility
+ * - Centered content layout
+ * - Typographic hierarchy using title and body fonts
+ */
 function HeroSection() {
   return (
     <section
-      id="inicio"
-      className="grid gap-4 rounded-2xl border border-evp-border bg-gradient-to-br from-evp-bg to-evp-section p-8 shadow-soft md:p-12"
+      id="home"
+      className="relative flex min-h-screen w-full items-center justify-center overflow-hidden"
     >
-      <p className="m-0 text-xs uppercase tracking-[0.12em] text-evp-accent">
-        Propuesta Visual 2026
-      </p>
-      <h1 className="m-0 font-title text-4xl text-evp-title md:text-6xl">
-        Sección Hero | Inicio del proyecto EVP
-      </h1>
-      <p className="m-0 max-w-3xl">
-        Texto inicial de presentación para definir la propuesta de valor de
-        Evelin Paiva. Este bloque está listo para reemplazar por el copy final
-        de marca.
-      </p>
-      <div>
-        <PrimaryButton>Agendar asesoría</PrimaryButton>
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/images/home/home.png')",
+        }}
+        aria-hidden="true"
+      />
+
+      <div className="absolute inset-0 bg-black/45" aria-hidden="true" />
+
+      <div className="relative z-10 w-full px-6 text-center sm:px-8 md:px-12">
+        <div className="mx-auto max-w-3xl">
+          <p className="mb-4 font-body text-xs uppercase tracking-widest text-white/85 sm:mb-5 md:mb-6">
+            VOLUME 1: THE ORIGIN
+          </p>
+
+          <h1 className="mb-8 font-title text-4xl italic text-white/95 sm:text-5xl md:mb-10 md:text-6xl lg:text-7xl">
+            Sculpt your best version
+          </h1>
+
+          <div className="flex flex-col items-center justify-center gap-6 sm:flex-row sm:gap-4">
+            <PrimaryButton
+              href="#about"
+              className="text-sm uppercase tracking-wider"
+            >
+              Start the experience
+            </PrimaryButton>
+
+            <SecondaryButton
+              href="#contact"
+              className="bg-white font-body text-sm uppercase tracking-wider transition duration-300 hover:-translate-y-0.5 hover:bg-white/80 hover:text-evp-accent active:translate-y-0"
+            >
+              CONTACT US
+            </SecondaryButton>
+          </div>
+        </div>
       </div>
     </section>
   );

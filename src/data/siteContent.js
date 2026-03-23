@@ -1,25 +1,25 @@
 export const navLinks = [
-  { label: "Inicio", href: "#inicio" },
-  { label: "Sobre mí", href: "#sobre-mi" },
-  { label: "Servicios", href: "#servicios" },
-  { label: "Portafolio", href: "#portafolio" },
-  { label: "Testimonios", href: "#testimonios" },
-  { label: "Contacto", href: "#contacto" }
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Services", href: "#services" },
+  { label: "Portfolio", href: "#portfolio" },
+  { label: "Testimonials", href: "#testimonials" },
+  { label: "Contact", href: "#contact" }
 ];
 
 export const services = [
-  "Asesoría de imagen personal",
-  "Styling editorial y comercial",
-  "Dirección creativa para marca personal"
+  "Personal image consulting",
+  "Editorial and commercial styling",
+  "Creative direction for personal brands"
 ];
 
 export const projects = [
-  "Proyecto destacado #01",
-  "Proyecto destacado #02",
-  "Proyecto destacado #03"
+  "Featured project #01",
+  "Featured project #02",
+  "Featured project #03"
 ];
 
 export const testimonials = [
-  "\"Texto inicial de testimonio 1 para validar estilo visual.\"",
-  "\"Texto inicial de testimonio 2 para validar jerarquía tipográfica.\""
+  '"Initial testimonial text #1 to validate visual style."',
+  '"Initial testimonial text #2 to validate typographic hierarchy."'
 ];

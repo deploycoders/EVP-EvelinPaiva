@@ -1,11 +1,14 @@
-function PrimaryButton({ children, href = "#contacto" }) {
+import Button from "@/components/common/Button/Button";
+
+/**
+ * PrimaryButton - Backwards compatible wrapper around Button component
+ * Recommended: Use <Button variant="primary" /> directly for new components
+ */
+function PrimaryButton({ children, href = "#contact", className = "" }) {
   return (
-    <a
-      className="inline-flex items-center justify-center rounded-full border border-transparent bg-evp-accent px-5 py-3 font-semibold text-white no-underline transition duration-200 hover:-translate-y-0.5 hover:bg-evp-accent-deep hover:shadow-soft"
-      href={href}
-    >
+    <Button href={href} variant="primary" size="md" className={className}>
       {children}
-    </a>
+    </Button>
   );
 }
 
