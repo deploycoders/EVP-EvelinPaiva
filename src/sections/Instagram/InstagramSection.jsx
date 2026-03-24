@@ -60,6 +60,7 @@ function InstagramSection() {
               modules={[Navigation, Pagination, Autoplay]}
               spaceBetween={24}
               slidesPerView={1}
+              loop={true}
               breakpoints={{
                 640: { slidesPerView: 2 },
                 1024: { slidesPerView: 3 },

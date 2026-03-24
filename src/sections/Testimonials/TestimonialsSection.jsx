@@ -26,6 +26,7 @@ function TestimonialsSection() {
           modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={24}
           slidesPerView={1}
+          loop={true}
           breakpoints={{
             768: { slidesPerView: 2 },
             1024: { slidesPerView: 3 },
