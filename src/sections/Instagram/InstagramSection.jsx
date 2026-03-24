@@ -1,43 +1,14 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 import { instagramData } from "@/data/info";
 import InstagramCard from "@/components/InstagramCard";
 
 function InstagramSection() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [visibleCards, setVisibleCards] = useState(4);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 640) setVisibleCards(1);
-      else if (window.innerWidth < 1024) setVisibleCards(2);
-      else if (window.innerWidth < 1280) setVisibleCards(3);
-      else setVisibleCards(4);
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  const totalCards = instagramData.posts.length;
-  const maxIndex = Math.max(0, totalCards - visibleCards);
-
-  const nextSlide = useCallback(() => {
-    setCurrentIndex((prevIndex) => (prevIndex >= maxIndex ? 0 : prevIndex + 1));
-  }, [maxIndex]);
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex <= 0 ? maxIndex : prevIndex - 1));
-  };
-  
-  // Auto-scroll every 5 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [nextSlide]);
-
   return (
     <section id="portfolio" className="bg-white py-20 overflow-hidden w-full">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
@@ -63,16 +34,16 @@ function InstagramSection() {
             </p>
             <div className="flex gap-2">
               <button 
-                onClick={prevSlide}
-                className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:border-gray-400 hover:text-gray-800 transition-colors"
+                className="swiper-button-prev-instagram w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:border-gray-800 hover:text-gray-800 transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                aria-label="Previous post"
               >
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 19l-7-7 7-7" />
                 </svg>
               </button>
               <button 
-                onClick={nextSlide}
-                className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:border-gray-400 hover:text-gray-800 transition-colors"
+                className="swiper-button-next-instagram w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:border-gray-800 hover:text-gray-800 transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                aria-label="Next post"
               >
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
@@ -83,38 +54,44 @@ function InstagramSection() {
         </div>
 
         {/* Carousel Area */}
-        <div className="relative mb-12">
-          <div className="overflow-hidden mx-[-12px] px-[12px]">
-            <div 
-              className="flex transition-transform duration-500 ease-in-out py-2"
-              style={{ transform: `translateX(-${currentIndex * (100 / visibleCards)}%)` }}
+        <div className="relative mb-8">
+          <div className="mx-[-12px] px-[12px]">
+            <Swiper
+              modules={[Navigation, Pagination, Autoplay]}
+              spaceBetween={24}
+              slidesPerView={1}
+              breakpoints={{
+                640: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+                1280: { slidesPerView: 4 },
+              }}
+              autoplay={{
+                delay: 5000,
+                disableOnInteraction: false,
+              }}
+              pagination={{
+                el: '.swiper-pagination-instagram',
+                clickable: true,
+                bulletClass: 'swiper-custom-bullet-ig',
+                bulletActiveClass: 'swiper-custom-bullet-active-ig',
+              }}
+              navigation={{
+                prevEl: '.swiper-button-prev-instagram',
+                nextEl: '.swiper-button-next-instagram',
+              }}
+              className="pb-4 pt-2"
             >
               {instagramData.posts.map((post) => (
-                <div 
-                  key={post.id} 
-                  className="flex-shrink-0 px-3"
-                  style={{ width: `${100 / visibleCards}%` }}
-                >
+                <SwiperSlide key={post.id}>
                   <InstagramCard {...post} />
-                </div>
+                </SwiperSlide>
               ))}
-            </div>
+            </Swiper>
           </div>
         </div>
 
-        {/* Pagination Dots */}
-        <div className="flex justify-center flex-wrap gap-2 mb-12">
-          {Array.from({ length: maxIndex + 1 }).map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrentIndex(i)}
-              className={`h-2 rounded-full transition-all ${
-                i === currentIndex ? 'w-2 bg-[#c65f42]' : 'w-2 bg-gray-200 hover:bg-gray-300'
-              }`}
-              aria-label={`Go to slide ${i + 1}`}
-            />
-          ))}
-        </div>
+        {/* Pagination Dots Container */}
+        <div className="swiper-pagination-instagram flex justify-center flex-wrap gap-2 mb-12"></div>
 
         {/* Bottom Button */}
         <div className="flex justify-center">
@@ -132,6 +109,23 @@ function InstagramSection() {
         </div>
 
       </div>
+
+      <style dangerouslySetInnerHTML={{__html: `
+        .swiper-custom-bullet-ig {
+          width: 8px;
+          height: 8px;
+          display: inline-block;
+          border-radius: 50%;
+          background: #e5e7eb;
+          transition: all 0.2s;
+          cursor: pointer;
+          margin: 0 4px;
+        }
+        .swiper-custom-bullet-active-ig {
+          background: #c65f42;
+          width: 8px;
+        }
+      `}} />
     </section>
   );
 }

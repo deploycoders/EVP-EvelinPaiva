@@ -1,15 +1,6 @@
 import PrimaryButton from "@/components/common/PrimaryButton/PrimaryButton";
 import SecondaryButton from "@/components/common/SecondaryButton/SecondaryButton";
 
-/**
- * HeroSection - Minimal, editorial hero section
- *
- * Architecture:
- * - Mobile-first responsive design
- * - Background image with semi-transparent overlay for legibility
- * - Centered content layout
- * - Typographic hierarchy using title and body fonts
- */
 function HeroSection() {
   return (
     <section
