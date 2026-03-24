@@ -29,7 +29,7 @@ function HeroSection() {
       <div className="relative z-10 w-full px-6 text-center sm:px-8 md:px-12">
         <div className="mx-auto max-w-3xl">
           <p className="mb-4 font-body text-xs uppercase tracking-widest text-white/85 sm:mb-5 md:mb-6">
-            VOLUME 1: THE ORIGIN
+            {/* VOLUME 1: THE ORIGIN */}
           </p>
 
           <h1 className="mb-8 font-title text-4xl italic text-white/95 sm:text-5xl md:mb-10 md:text-6xl lg:text-7xl">
@@ -45,7 +45,7 @@ function HeroSection() {
             </PrimaryButton>
 
             <SecondaryButton
-              href="#contact"
+              href="#location"
               className="bg-white font-body text-sm uppercase tracking-wider transition duration-300 hover:-translate-y-0.5 hover:bg-white/80 hover:text-evp-accent active:translate-y-0"
             >
               CONTACT US

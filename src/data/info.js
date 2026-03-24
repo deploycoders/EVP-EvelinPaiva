@@ -2,52 +2,81 @@ export const testimonialsData = [
   {
     id: 1,
     stars: 5,
-    text: "The attention to detail and natural results exceeded all my expectations. A true oasis of peace in the city.",
-    name: "Elena Rodriguez",
-    treatment: "GLOW FACIAL TREATMENT",
-    avatar: "https://i.pravatar.cc/150?u=elena", // Placeholder avatar
+    text: "Quiero destacar que es una excelente trabajadora, muy profesional, respetuosa y amable. Desde el primer momento me hizo sentir en confianza y cuidada.Después de mi operación, los resultados fueron excelentes, superaron mis expectativas. Se nota el amor y la dedicación que pone en su trabajo. Sin duda, si tuviera que recomendar a alguien, siempre la recomendaría a ella. Es una persona en la que se puede confiar plenamente. 🌟💯",
+    name: "Melany Gutierrez",
+    treatment: "POSTOPERATIVE CARE",
+    initials: "MG"
   },
   {
     id: 2,
     stars: 5,
-    text: "The best facial treatment I've ever received. My skin looks radiant, rejuvenated, and with an incredible texture from the very first session.",
-    name: "Sofia Mendieta",
-    treatment: "BODY RELAXATION",
-    avatar: "https://i.pravatar.cc/150?u=sofia", // Placeholder avatar
-  },
+    text: "Recomiendo mucho a mi masajista Evelin  y su espacio de trabajo . Es una persona muy profesional, atenta y dedicada, siempre se asegura de que cada sesión sea relajante y personalizada según lo que necesitas El lugar es limpio, acogedor y transmite mucha tranquilidad desde que entras. Sin duda, una experiencia que vale la pena repetir.",
+    name: "Yuliet Delaphena",
+    treatment: "BODY MASSAGE",
+    initials: "YD"  },
   {
     id: 3,
     stars: 5,
-    text: "Impeccable professionalism in an environment of pure luxury. The techniques they use are avant-garde and the personal treatment is exceptional.",
-    name: "Valeria Dávila",
+    text: "Dios bendiga las manos de Evelyn. Sus masajes de drenaje, maderoterapia y los otros tratamientos que te sugiere son magníficos. Los resultados visibles desde el día uno. Su trato es muy ameno. 1000% recomendada.",
+    name: "Patricia Guevara",
     treatment: "FACIAL HARMONIZATION",
-    avatar: null, // No avatar, will use initials
-    initials: "VD"
+    initials: "PG"
   },
   {
     id: 4,
     stars: 5,
-    text: "Incredible experience. From the moment you walk in, you feel the tranquility. The treatment exceeded my expectations and my skin has improved significantly.",
-    name: "Carlos Mendoza",
+    text: "Evelyn is very professional and knowledgeable! I am super happy with my results, every session has different techniques . I love it !!! For me is a long commute but it is completely worth!  I highly recommend this place. Thank you Evelyn.!!!! Evelyn es muy profesional y tiene mucho conocimiento! Estoy súper contenta con los resultados; cada sesión tiene técnicas diferentes. ¡Me encanta! Para mí es un viaje largo, pero vale totalmente la pena. Recomiendo muchísimo este lugar. ¡Gracias, Evelyn!",
+    name: "Diana Ayala",
     treatment: "DEEP CLEANSING",
-    avatar: "https://i.pravatar.cc/150?u=carlos",
+    initials: "DA"
   },
   {
     id: 5,
-    stars: 4,
-    text: "Very good service, the staff is very friendly and the facilities are first class. I will definitely return.",
-    name: "Ana Soto",
-    treatment: "RELAXING MASSAGE",
-    avatar: null,
-    initials: "AS"
+    stars: 5,
+    text: "Los masajes reductores y la maderoterapia fueron increíbles. Atención excelente, ambiente relajante y resultados visibles. ¡Vale la pena!",
+    name: "Crisnainel Villalobos",
+    treatment: "BODY MASSAGE",
+    initials: "CV"
   },
   {
     id: 6,
     stars: 5,
-    text: "The results are visible immediately. I totally recommend the Glow treatment, it left my skin perfect for my event.",
-    name: "Lucía Fernández",
-    treatment: "GLOW FACIAL TREATMENT",
-    avatar: "https://i.pravatar.cc/150?u=lucia",
+    text: "100% recomendada me encanta los resultados que veo en mi cuerpo  te explica todo el proceso está contigo en todo momento para que llegues a los resultados que quieres en tu cuerpo siempre dando la milla extra para ayudarte  una excelente profesional y  excelente mujer",
+    name: "Ivelis Pomales",
+    treatment: "BODY MASSAGE",
+    initials: "IP"
+  },
+  {
+    id: 7,
+    stars: 5,
+    text: "La mejor en trato y servicio😍ves los resultados desde la primera sección, amando mis cambios✨🙌🏻…",
+    name: "Daniela González",
+    treatment: "BODY MASSAGE",
+    initials: "DG"
+  },
+  {
+    id: 8,
+    stars: 5,
+    text: "La mejor estoy enamorada de sus manos he tenido un cambio espectacular 😍…",
+    name: "Dayana Guevara",
+    treatment: "BODY MASSAGE",
+    initials: "DG"
+  },
+  {
+    id: 9,
+    stars: 5,
+    text: "Me encantó es muy profesional simpática, amable  hace un trabajo excelente es súper organizada, su área de trabajo muy bonito muy limpio estoy súper contenta con su trabajo",
+    name: "Giovanna Luna",
+    treatment: "BODY MASSAGE",
+    initials: "GL"
+  },
+  {
+    id: 10,
+    stars: 5,
+    text: "Después de una sola visita con Evelyn, aprendí muchísimo sobre el cuidado posterior adecuado y vi resultados. Evelyn me realizó una evaluación exhaustiva, me explicó cada proceso y fue muy amable. ¡La recomiendo muchísimo!",
+    name: "Jessica Rios-Flores",
+    treatment: "POSTOPERATIVE CARE",
+    initials: "JRF"
   }
 ];
 
@@ -136,4 +165,34 @@ export const instagramData = {
       link: "https://www.instagram.com/p/DUs6OaFEfo-/?img_index=1",
     }
   ]
+};
+
+export const locationData = {
+  eyebrow: "CONNECT WITH THE SPA",
+  titleLine1: "Tranquil presence,",
+  titleLine2: "Local <i class='italic font-normal'>essence.</i>",
+  location: {
+    title: "LOCATION",
+    addressPart1: "10641 Laguna Plains Dr",
+    addressPart2: "Suite 100",
+    cityStateZip: "Riverview, FL 33578"
+  },
+  reachUs: {
+    title: "REACH US",
+    email: "sculptbodyspaevp@gmail.com",
+    phone: "+1 (813) 648-8496"
+  },
+  hours: {
+    title: "SPA HOURS",
+    schedule: [
+      { day: "Mon — Fri", hours: "09:00 — 18:00", highlight: false },
+      { day: "Saturday", hours: "09:00 — 18:00", highlight: true },
+      { day: "Sunday", hours: "Closed", highlight: false, closed: true }
+    ]
+  },
+  mapCard: {
+    title: "SCULPT BODY SPA HQ",
+    description: "Situated in the peaceful center of the wellness district, our spa serves as an oasis for relaxation and rejuvenation.",
+    linkText: "OPEN IN MAPS"
+  }
 };

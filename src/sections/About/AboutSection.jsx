@@ -2,26 +2,26 @@ const pillars = [
   {
     id: "01",
     label: "METHOD",
-    title: "Bespoke Integration",
-    text: "Each process is adapted to your rhythm, goals, and identity to build coherent, lasting transformation.",
+    title: "Personalized Care",
+    text: "Every treatment is tailored to your body's unique needs, ensuring effective and long-lasting results.",
   },
   {
     id: "02",
     label: "PRODUCTS",
-    title: "Curated Selection",
-    text: "Every element is chosen with intention, prioritizing quality, longevity, and refined functionality.",
+    title: "Premium Quality",
+    text: "We use only top-tier, carefully selected products that nourish your skin and enhance your natural glow.",
   },
   {
     id: "03",
     label: "SPACE",
-    title: "Sensory Stillness",
-    text: "Calm, structured environments improve clarity and support consistent personal expression.",
+    title: "Tranquil Oasis",
+    text: "Our spa is designed as a peaceful sanctuary, allowing you to completely disconnect and deeply relax.",
   },
   {
     id: "04",
-    label: "ETHICS",
-    title: "Transparent Care",
-    text: "We focus on long-term outcomes with honest guidance and measurable progress over time.",
+    label: "RESULTS",
+    title: "Visible Transformation",
+    text: "We focus on real, noticeable improvements from the very first session, prioritizing your ultimate well-being.",
   },
 ];
 
@@ -32,29 +32,26 @@ function AboutSection() {
         <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
           <article className="max-w-xl">
             <p className="mb-3 text-[11px] uppercase tracking-[0.18em] text-evp-accent">
-              Our ethos
+              Our Philosophy
             </p>
             <h2 className="font-title text-5xl leading-[0.95] text-evp-title md:text-6xl">
-              Preserving the
+              Reveal your best
               <span className="block italic text-evp-title/90">
-                Natural Self.
+                version.
               </span>
             </h2>
 
             <div className="mt-8 space-y-5 text-[15px] leading-8 text-evp-body/90">
               <p>
-                We design identity systems where elegance comes from precision,
-                restraint, and intention. The goal is not to add more, but to
-                reveal what is already authentic.
+                At Sculpt Body Spa, we believe that true beauty stems from a perfect balance of inner peace and physical well-being. Our goal is to provide a transformative journey that restores your energy and health.
               </p>
               <p>
-                Every decision is guided by longevity: a visual language that
-                feels elevated, personal, and consistently aligned across time.
+                Every massage and aesthetic treatment is performed with deep intention and specialized techniques, designed to naturally sculpt your figure while melting away the daily stress.
               </p>
             </div>
 
             <p className="mt-8 border-t border-evp-border pt-5 font-title text-xl italic text-evp-title/75">
-              A Legacy of Care
+              A Commitment to Wellness
             </p>
           </article>
 
@@ -62,21 +59,21 @@ function AboutSection() {
             <div className="aspect-[4/5] w-full overflow-hidden border rounded-md border-evp-border bg-evp-section">
               <img
                 src="/images/about/evelyn_about.webp"
-                alt="Editorial portrait placeholder for the about section"
+                alt="Evelin Paiva professional portrait"
                 className="h-full w-full object-cover object-top"
               />
             </div>
 
             <div className="relative mt-4 w-[82%] border border-evp-border border-l-2 border-l-evp-accent/70 bg-evp-section p-4 shadow-soft md:absolute md:-bottom-7 md:left-6 md:mt-0 md:w-[72%]">
               <p className="text-[10px] uppercase tracking-[0.14em] text-evp-body/60">
-                Identity Protocol
+                Signature Experience
               </p>
               <p className="mt-1 font-title text-2xl italic text-evp-title">
-                The Archive 01.02
+                Sculpt Body Protocol
               </p>
               <div className="mt-3 grid grid-cols-2 gap-3 text-[11px] uppercase tracking-[0.08em] text-evp-body/65">
-                <span>Method: Adaptive</span>
-                <span>Cycle: Long-term</span>
+                <span>Focus: Restoration</span>
+                <span>Benefits: Immediate</span>
               </div>
             </div>
           </article>
@@ -117,11 +114,10 @@ function AboutSection() {
             </svg>
           </div>
           <p className="font-title text-4xl italic leading-tight text-evp-title md:text-5xl">
-            "True elegance is the absence of noise. We return to the source to
-            design what endures."
+            "Our hands not only shape the body; they restore your peace of mind and renew your spirit."
           </p>
           <p className="mt-6 text-[11px] uppercase tracking-[0.16em] text-evp-body/60">
-            Dr. Elena Aris, Founder
+            Evelin Paiva, Specialist & Founder
           </p>
         </div>
       </div>

@@ -8,7 +8,7 @@ import PortfolioSection from "@/sections/Portfolio/PortfolioSection";
 import TestimonialsSection from "@/sections/Testimonials/TestimonialsSection";
 import InstagramSection from "@/sections/Instagram/InstagramSection";
 import NewsletterSection from "@/sections/Newsletter/NewsletterSection";
-import ContactSection from "@/sections/Contact/ContactSection";
+import LocationSection from "@/sections/Location/LocationSection";
 
 function HomePage() {
   return (
@@ -20,15 +20,12 @@ function HomePage() {
       <ServicesSection />
 
       <main className="mx-auto w-[92%] max-w-6xl px-0 py-10 pb-16">
-        <PortfolioSection />
         <TestimonialsSection />
       </main>
       
       <InstagramSection />
       
-      <main className="mx-auto w-[92%] max-w-6xl px-0 py-0 pb-16">
-        <ContactSection />
-      </main>
+      <LocationSection />
 
       <SiteFooter />
     </div>

@@ -39,7 +39,7 @@ function InstagramSection() {
   }, [nextSlide]);
 
   return (
-    <section className="bg-white py-20 overflow-hidden w-full">
+    <section id="portfolio" className="bg-white py-20 overflow-hidden w-full">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         
         {/* Header Area */}
