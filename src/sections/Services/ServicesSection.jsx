@@ -76,7 +76,7 @@ function ServicesSection() {
       id="services"
       className="w-full overflow-x-clip border-t border-evp-border bg-evp-section pt-14 md:pt-20"
     >
-      <div className="mx-auto w-full max-w-6xl">
+      <div className="mx-auto w-[92%] max-w-6xl">
         <header className="mx-auto mb-10 max-w-3xl text-left md:mb-14">
           <p className="text-[11px] uppercase tracking-[0.16em] text-evp-accent">
             Our signature experience
@@ -89,7 +89,7 @@ function ServicesSection() {
           </p>
         </header>
 
-        <div className="lg:hidden">
+        <div className="md:hidden">
           <Swiper
             modules={[Autoplay]}
             loop
@@ -99,11 +99,10 @@ function ServicesSection() {
               disableOnInteraction: false,
               pauseOnMouseEnter: true,
             }}
-            slidesPerView={1.08}
+            slidesPerView={1.12}
             spaceBetween={20}
             breakpoints={{
-              640: { slidesPerView: 1.35, spaceBetween: 24 },
-              768: { slidesPerView: 2.05, spaceBetween: 24 },
+              640: { slidesPerView: 1.2, spaceBetween: 20 },
             }}
           >
             {therapyCards.map((card) => (
@@ -114,7 +113,7 @@ function ServicesSection() {
           </Swiper>
         </div>
 
-        <div className="hidden grid-cols-1 gap-x-7 gap-y-10 lg:grid xl:grid-cols-3">
+        <div className="hidden grid-cols-1 gap-x-7 gap-y-10 md:grid md:grid-cols-2 xl:grid-cols-3">
           {therapyCards.map((card) => (
             <TherapyCard
               key={card.id}
@@ -218,3 +217,4 @@ function ServicesSection() {
 }
 
 export default ServicesSection;
+
