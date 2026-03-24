@@ -13,16 +13,43 @@
   body,
   #root {
     min-height: 100%;
+    scroll-behavior: smooth;
   }
 
   body {
     @apply m-0 font-body text-evp-body;
-    background: radial-gradient(circle at top right, #fff8f3 0%, #F7F3F0 42%);
+    background: radial-gradient(circle at top right, #fff8f3 0%, #f7f3f0 42%);
+  }
+
+  /* Prevent fixed header from covering anchor targets */
+  [id] {
+    scroll-margin-top: 6.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    [id] {
+      scroll-margin-top: 5rem;
+    }
   }
 }
 
 @layer components {
   .section-shell {
     @apply mt-10 rounded-2xl border border-evp-border bg-evp-section p-6 shadow-soft md:p-8;
+  }
+}
+
+.testimonials-swiper {
+  overflow: hidden;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-6px);
   }
 }
