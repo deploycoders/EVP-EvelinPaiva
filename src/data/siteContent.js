@@ -2,8 +2,8 @@ export const navLinks = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
-  { label: "Portfolio", href: "#portfolio" },
   { label: "Testimonials", href: "#testimonials" },
+  { label: "Portfolio", href: "#portfolio" },
   { label: "Location", href: "#location" },
 ];
 
@@ -103,6 +103,45 @@ export const treatmentSpecs = [
   ["Consultation Flow", "24 hours"],
   ["Product Base", "Organic oils & botanicals"],
   ["Therapist Care", "Clinical level IV"],
+];
+
+export const testimonialsData = [
+  {
+    id: "dayana",
+    rating: 5,
+    quote:
+      "I genuinely fell in love with her hands. The change I noticed after the session was spectacular.",
+    name: "Dayana Guevara",
+    service: "Body Massage",
+    initials: "DG",
+  },
+  {
+    id: "giovanna",
+    rating: 5,
+    quote:
+      "Professional, kind, and incredibly organized. Her technique is clean, precise, and deeply effective.",
+    name: "Giovanna Luna",
+    service: "Body Massage",
+    initials: "GL",
+  },
+  {
+    id: "jessica",
+    rating: 5,
+    quote:
+      "After one session I learned so much about proper aftercare and body awareness. I fully recommend her.",
+    name: "Jessica Rios",
+    service: "Postoperative Care",
+    initials: "JR",
+  },
+  {
+    id: "camila",
+    rating: 5,
+    quote:
+      "Her approach feels intentional and calm. Every step is explained, and the results are visible from day one.",
+    name: "Camila Torres",
+    service: "Facial Architecture",
+    initials: "CT",
+  },
 ];
 
 export const projects = [

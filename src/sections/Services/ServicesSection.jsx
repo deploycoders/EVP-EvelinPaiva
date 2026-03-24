@@ -74,7 +74,7 @@ function ServicesSection() {
   return (
     <section
       id="services"
-      className="w-full overflow-x-clip border-y border-evp-border bg-evp-section py-14 md:py-20"
+      className="w-full overflow-x-clip border-t border-evp-border bg-evp-section pt-14 md:pt-20"
     >
       <div className="mx-auto w-full max-w-6xl">
         <header className="mx-auto mb-10 max-w-3xl text-left md:mb-14">
@@ -125,7 +125,7 @@ function ServicesSection() {
         </div>
       </div>
 
-      <section className="relative left-1/2 mt-16 w-[100dvw] -translate-x-1/2 border-y border-evp-border bg-white">
+      <section className="relative left-1/2 mt-16 w-[100dvw] -translate-x-1/2 border-t border-evp-border bg-white">
         <div className="mx-auto w-[92%] max-w-6xl py-12 md:py-20">
           <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-start">
             <div>

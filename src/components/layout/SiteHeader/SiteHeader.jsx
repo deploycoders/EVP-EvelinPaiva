@@ -75,7 +75,9 @@ function SiteHeader() {
       <div className="mx-auto flex w-[92%] max-w-6xl items-center justify-between gap-4 py-4 lg:gap-8 lg:py-5">
         <a
           className={`font-title text-2xl no-underline transition-colors duration-300 lg:text-3xl ${
-            headerSolid ? "text-evp-title hover:text-evp-accent" : "text-white hover:text-evp-accent"
+            headerSolid
+              ? "text-evp-title hover:text-evp-accent"
+              : "text-white hover:text-evp-accent"
           }`}
           href="#home"
         >
@@ -118,16 +120,38 @@ function SiteHeader() {
           aria-expanded={isMenuOpen}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className={`p-2 transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-evp-accent lg:hidden ${
-            headerSolid ? "text-evp-title hover:text-evp-accent" : "text-white hover:text-evp-accent"
+            headerSolid
+              ? "text-evp-title hover:text-evp-accent"
+              : "text-white hover:text-evp-accent"
           }`}
         >
           {isMenuOpen ? (
-            <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            <svg
+              className="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
             </svg>
           ) : (
-            <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            <svg
+              className="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
             </svg>
           )}
         </button>
@@ -154,8 +178,18 @@ function SiteHeader() {
             aria-label="Close menu"
             className="p-2 text-evp-title transition-colors duration-300 hover:text-evp-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-evp-accent"
           >
-            <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            <svg
+              className="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
             </svg>
           </button>
         </div>
