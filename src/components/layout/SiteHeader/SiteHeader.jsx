@@ -81,7 +81,7 @@ function SiteHeader() {
           }`}
           href="#home"
         >
-          Evelin Paiva
+          Evelyn Paiva
         </a>
 
         <nav aria-label="Main navigation" className="hidden flex-1 lg:block">
