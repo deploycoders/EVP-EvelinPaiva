@@ -17,8 +17,8 @@ function HomePage() {
       <ManifestoBannerSection />
       <AboutSection />
       <ServicesSection />
-      {/* <RecoverySection /> */}
-      {/* <TestimonialsSection /> */}
+      <RecoverySection />
+      <TestimonialsSection />
 
       {/* <InstagramSection /> */}
 
