@@ -6,43 +6,44 @@ import {
   therapyCards,
   treatmentSpecs,
 } from "@/data/siteContent";
-import "swiper/css";
+import { motion, AnimatePresence } from "framer-motion";
 
-const shapeClasses = {
-  left: "rounded-t-[120px] rounded-b-2xl",
-  center: "rounded-t-[160px] rounded-b-none",
-  right: "rounded-t-[120px] rounded-b-2xl",
-};
+// Importar estilos de Swiper
+import "swiper/css";
 
 function TherapyCard({ card, onOpen }) {
   return (
-    <article className="group">
+    <article className="group h-full flex flex-col">
+      {/* Sección de Imagen con borde curvo */}
       <button
         type="button"
         onClick={() => onOpen(card)}
-        className={`aspect-[4/5] w-full overflow-hidden border border-evp-border bg-evp-section text-left transition duration-300 hover:-translate-y-1 hover:shadow-soft ${shapeClasses[card.shape]}`}
+        className="aspect-[7/11] lg:aspect-[8/11] w-full overflow-hidden border border-evp-border bg-evp-section text-left transition duration-300 hover:-translate-y-1 hover:shadow-soft rounded-t-[160px] rounded-b-2xl relative"
         aria-label={`Open details for ${card.title}`}
       >
         <img
           src={card.image || "/images/home/home.png"}
-          alt={`${card.title} placeholder image`}
-          className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+          alt={card.title}
+          className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.05]"
         />
+        {/* Overlay sutil en hover */}
+        <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/5" />
       </button>
 
-      <div className="mt-3 border-l-2 border-evp-accent/70 pl-4">
-        <div className="flex items-start justify-between gap-3">
-          <h3 className="font-title text-3xl italic leading-tight text-evp-title">
+      {/* Sección de Texto Ajustada (Flex Container) */}
+      <div className="mt-5 border-l-2 border-evp-accent/40 pl-4 flex-grow grid grid-cols-[1fr_auto] gap-x-5 gap-y-1 items-start">
+        {/* Lado Izquierdo: Título y Subtítulo */}
+        <div>
+          <h3 className="font-title text-3xl italic leading-tight text-evp-title transition-colors duration-300 group-hover:text-evp-accent">
             {card.title}
           </h3>
-          <span className="mt-1 text-sm font-medium text-evp-accent">
-            {card.price}
-          </span>
+          <p className="mt-1 text-[10px] font-medium uppercase tracking-[0.15em] text-evp-accent/80 col-span-2">
+            {card.subtitle}
+          </p>
         </div>
-        <p className="mt-1 text-[11px] uppercase tracking-[0.11em] text-evp-body/70">
-          {card.subtitle}
-        </p>
-        <p className="mt-3 text-sm leading-7 text-evp-body/90">
+
+        {/* Lado Derecho: Descripción (Summary) */}
+        <p className="text-[13px] leading-relaxed text-evp-body/80 line-clamp-3 text-right max-w-[200px]">
           {card.summary}
         </p>
       </div>
@@ -53,17 +54,18 @@ function TherapyCard({ card, onOpen }) {
 function ServicesSection() {
   const [selectedTherapy, setSelectedTherapy] = useState(null);
 
+  // Segmentación para Desktop (XL)
+  const featuredTherapies = therapyCards.slice(0, 3);
+  const secondaryTherapies = therapyCards.slice(3);
+
+  // useEffect para el modal (se mantiene igual)
   useEffect(() => {
     function handleEsc(event) {
-      if (event.key === "Escape") {
-        setSelectedTherapy(null);
-      }
+      if (event.key === "Escape") setSelectedTherapy(null);
     }
-
     if (selectedTherapy) {
       document.addEventListener("keydown", handleEsc);
       document.body.style.overflow = "hidden";
-
       return () => {
         document.removeEventListener("keydown", handleEsc);
         document.body.style.overflow = "unset";
@@ -76,76 +78,86 @@ function ServicesSection() {
       id="services"
       className="w-full overflow-x-clip border-t border-evp-border bg-evp-section pt-14 md:pt-20"
     >
-      <div className="mx-auto w-[92%] max-w-6xl">
-        <header className="mx-auto mb-10 max-w-3xl text-left md:mb-14">
-          <p className="text-[11px] uppercase tracking-[0.16em] text-evp-accent">
-            Our signature experience
-          </p>
-          <h2 className="mt-2 font-title text-5xl text-evp-title md:text-6xl">
-            Our Therapies
-          </h2>
-          <p className="mt-3 font-title text-xl italic text-evp-body/80">
-            A return to essence through touch and form.
-          </p>
+      <div className="mx-auto w-full max-w-6xl px-6 xl:px-0">
+        <header className="mx-auto mb-10 flex flex-col border-b border-evp-border justify-between pb-8 md:mb-14 md:flex-row md:items-end">
+          <div className="max-w-xl flex flex-col items-start">
+            <p className="text-[11px] uppercase tracking-[0.16em] text-evp-accent font-semibold">
+              Our signature experience
+            </p>
+            <h2 className="mt-2 font-title text-5xl text-evp-title md:text-6xl">
+              Our Therapies
+            </h2>
+            <div className="mt-4 h-[2px] w-16 bg-[#c65f42]"></div>
+          </div>
+
+          <div className="mt-4 md:mt-0 md:text-right">
+            <p className="font-title text-xl italic text-evp-body/80 md:max-w-xs">
+              A return to essence through touch and form.
+            </p>
+          </div>
         </header>
 
-        <div className="md:hidden">
-          <Swiper
-            modules={[Autoplay]}
-            loop
-            speed={700}
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true,
-            }}
-            slidesPerView={1.12}
-            spaceBetween={20}
-            breakpoints={{
-              640: { slidesPerView: 1.2, spaceBetween: 20 },
-            }}
-          >
-            {therapyCards.map((card) => (
-              <SwiperSlide key={card.id}>
-                <TherapyCard card={card} onOpen={setSelectedTherapy} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
+        <div className="relative">
+          {/* Swiper para Móvil, Tablet y Laptops (hasta antes de XL) */}
+          <div className="xl:hidden">
+            <Swiper
+              modules={[Autoplay]}
+              loop
+              speed={800}
+              autoplay={{ delay: 4000, disableOnInteraction: false }}
+              slidesPerView={1.15} // 1 en móvil pequeño
+              spaceBetween={24}
+              breakpoints={{
+                640: { slidesPerView: 2.2, spaceBetween: 30 }, // 2 en tablets
+                1024: { slidesPerView: 3, spaceBetween: 30 }, // 3 en laptops
+              }}
+              className="!overflow-visible" // Para que las sombras no se corten
+            >
+              {therapyCards.map((card) => (
+                <SwiperSlide key={card.id}>
+                  <TherapyCard card={card} onOpen={setSelectedTherapy} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
 
-        <div className="hidden grid-cols-1 gap-x-7 gap-y-10 md:grid md:grid-cols-2 xl:grid-cols-3">
-          {therapyCards.map((card) => (
-            <TherapyCard
-              key={card.id}
-              card={card}
-              onOpen={setSelectedTherapy}
-            />
-          ))}
+          {/* Grid Estático para Desktop Extra Large (XL+) */}
+          <div className="hidden xl:grid xl:grid-cols-3 xl:gap-x-8 xl:gap-y-16">
+            {therapyCards.map((card) => (
+              <TherapyCard
+                key={card.id}
+                card={card}
+                onOpen={setSelectedTherapy}
+              />
+            ))}
+          </div>
         </div>
       </div>
 
-      <section className="relative left-1/2 mt-16 w-[100dvw] -translate-x-1/2 border-t border-evp-border bg-white">
-        <div className="mx-auto w-[92%] max-w-6xl py-12 md:py-20">
-          <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-start">
+      {/* --- SECCIÓN CORE PRINCIPLES --- */}
+      <section className="relative left-1/2 mt-24 w-[100dvw] -translate-x-1/2 border-t border-evp-border bg-white shadow-inner">
+        <div className="mx-auto w-[90%] max-w-6xl py-16 md:py-24">
+          <div className="grid gap-16 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
             <div>
-              <h3 className="font-title text-4xl leading-tight text-evp-title">
+              <h3 className="font-title text-4xl leading-tight text-evp-title md:text-5xl">
                 The Core Principles of
-                <span className="block">Our Practice</span>
+                <span className="block italic opacity-80">Our Practice</span>
               </h3>
+              <div className="mt-4 h-[2px] w-16 bg-[#c65f42]"></div>
 
-              <div className="mt-7 space-y-6">
+              <div className="mt-12 space-y-10">
                 {corePrinciples.map((item) => (
                   <article
                     key={item.id}
-                    className="border-l border-evp-accent pl-4"
+                    className="group border-l border-evp-accent/30 pl-6 transition-colors hover:border-evp-accent"
                   >
-                    <p className="text-[10px] uppercase tracking-[0.15em] text-evp-accent">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-evp-accent">
                       {item.id}
                     </p>
                     <h4 className="mt-1 font-title text-2xl italic text-evp-title">
                       {item.title}
                     </h4>
-                    <p className="mt-2 max-w-md text-sm leading-7 text-evp-body/90">
+                    <p className="mt-3 max-w-lg text-[15px] leading-8 text-evp-body/80">
                       {item.text}
                     </p>
                   </article>
@@ -153,68 +165,112 @@ function ServicesSection() {
               </div>
             </div>
 
-            <div className="border-l border-evp-accent/70 pl-5 lg:pl-7">
-              <p className="text-[10px] uppercase tracking-[0.15em] text-evp-accent">
-                Treatment specs
+            <div className="sticky top-10 border-l border-evp-accent/20 pl-6 lg:pl-10">
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-evp-accent">
+                Technical standards
               </p>
-
-              <dl className="mt-4 divide-y divide-evp-border border-y border-evp-border">
+              <dl className="mt-6 divide-y divide-evp-border border-y border-evp-border">
                 {treatmentSpecs.map(([label, value]) => (
                   <div
                     key={label}
-                    className="grid grid-cols-[1fr_auto] gap-3 py-3 text-sm"
+                    className="grid grid-cols-[1fr_auto] gap-4 py-4 text-[13px]"
                   >
-                    <dt className="text-evp-body/80">{label}</dt>
-                    <dd className="text-right text-evp-title/85">{value}</dd>
+                    <dt className="font-medium text-evp-body/60">{label}</dt>
+                    <dd className="text-right font-title italic text-evp-title">
+                      {value}
+                    </dd>
                   </div>
                 ))}
               </dl>
+              <div className="mt-8 bg-evp-section/40 p-6 rounded-xl border border-evp-border/30">
+                <p className="text-[12px] italic text-evp-body/70 leading-relaxed">
+                  "Precision is the bridge between clinical innovation and
+                  aesthetic harmony."
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {selectedTherapy ? (
-        <div
-          className="fixed inset-0 z-[70] flex items-center justify-center bg-black/50 p-4"
-          onClick={() => setSelectedTherapy(null)}
-        >
-          <article
-            className="w-full max-w-xl border border-evp-border bg-evp-bg p-6 shadow-soft md:p-8"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <div className="flex items-start justify-between gap-4">
-              <div>
-                <p className="text-[11px] uppercase tracking-[0.14em] text-evp-accent">
-                  Therapy details
-                </p>
-                <h3 className="mt-2 font-title text-4xl italic text-evp-title">
-                  {selectedTherapy.title}
-                </h3>
-              </div>
-              <button
-                type="button"
-                onClick={() => setSelectedTherapy(null)}
-                className="inline-flex h-9 w-9 items-center justify-center border border-evp-border text-evp-body transition hover:text-evp-accent"
-                aria-label="Close details"
-              >
-                ×
-              </button>
-            </div>
+      <AnimatePresence>
+        {selectedTherapy && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6">
+            {/* Backdrop con desenfoque profundo */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedTherapy(null)}
+              className="absolute inset-0 bg-evp-title/20 backdrop-blur-xl"
+            />
 
-            <div className="mt-5 space-y-4 text-evp-body/90">
-              <p className="text-sm uppercase tracking-[0.12em] text-evp-body/70">
-                {selectedTherapy.subtitle} · {selectedTherapy.price}
-              </p>
-              <p className="text-base leading-8">{selectedTherapy.summary}</p>
-              <p className="leading-8">{selectedTherapy.details}</p>
-            </div>
-          </article>
-        </div>
-      ) : null}
+            {/* Contenedor del Modal */}
+            <motion.article
+              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 30, scale: 0.95 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="relative w-full max-w-lg overflow-hidden bg-white px-8 py-12 shadow-[0_30px_100px_-20px_rgba(0,0,0,0.2)] md:px-16 md:py-20 rounded-3xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Decoración sutil: Un número o letra de fondo muy tenue */}
+              <span className="absolute -left-4 -top-10 select-none font-title text-[180px] italic opacity-[0.03] text-evp-accent">
+                {selectedTherapy.title.charAt(0)}
+              </span>
+
+              {/* Botón Cerrar Minimalista */}
+              <button
+                onClick={() => setSelectedTherapy(null)}
+                className="absolute right-8 top-8 group"
+              >
+                <div className="relative flex h-8 w-8 items-center justify-center">
+                  <div className="absolute h-[1px] w-6 rotate-45 bg-evp-title transition-transform group-hover:rotate-0" />
+                  <div className="absolute h-[1px] w-6 -rotate-45 bg-evp-title transition-transform group-hover:rotate-0" />
+                </div>
+              </button>
+
+              <div className="relative flex flex-col items-center text-center">
+                <header>
+                  <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-evp-accent">
+                    Protocol Detail
+                  </p>
+                  <h3 className="mt-4 font-title text-4xl italic leading-tight text-evp-title md:text-5xl">
+                    {selectedTherapy.title}
+                  </h3>
+                  {/* Línea divisoria minimalista */}
+                  <div className="mx-auto mt-8 h-[1px] w-12 bg-evp-accent/30" />
+                </header>
+
+                <div className="mt-10 space-y-8">
+                  <div className="space-y-4">
+                    <span className="text-[11px] font-bold uppercase tracking-widest text-evp-accent/60">
+                      {selectedTherapy.subtitle}
+                    </span>
+                    <p className="font-title text-xl italic leading-relaxed text-evp-body">
+                      "{selectedTherapy.summary}"
+                    </p>
+                  </div>
+
+                  <div className="relative">
+                    <p className="text-[15px] leading-8 text-evp-body/80">
+                      {selectedTherapy.details}
+                    </p>
+                  </div>
+                </div>
+
+                <footer className="mt-12">
+                  <p className="text-[10px] italic text-evp-body/40 uppercase tracking-widest">
+                    Consult with our specialists for personalized care
+                  </p>
+                </footer>
+              </div>
+            </motion.article>
+          </div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
 
 export default ServicesSection;
-
