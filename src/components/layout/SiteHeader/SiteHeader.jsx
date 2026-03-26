@@ -1,9 +1,43 @@
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom"; // Importante para el Portal
-import { navLinks } from "@/data/siteContent";
+import { navLinks, siteInfo } from "@/data/siteContent";
 import Button from "@/components/common/Button/Button";
 
 const WHATSAPP_URL = "https://wa.me/584245883315?text=Hi...";
+
+/* ──────────────────────────────────────────────
+   LogoArea — Coloca tu logo en siteContent.js
+   → siteInfo.logo = "/images/tu-logo.svg"
+   ────────────────────────────────────────────── */
+function LogoArea({ isSolid }) {
+  if (siteInfo?.logo) {
+    return (
+      <a href="#home" className="flex-shrink-0 bg-evp-accent p-1 rounded-md">
+        <img
+          src={siteInfo.logo}
+          alt={siteInfo.name ?? "Logo"}
+          className="h-10 w-auto object-contain lg:h-12"
+        />
+      </a>
+    );
+  }
+
+  /* ← COLOCA TU LOGO AQUÍ */
+  return (
+    <a
+      href="#home"
+      className={`flex h-10 w-36 flex-shrink-0 items-center justify-center rounded-lg border-2 border-dashed transition-colors lg:h-12 lg:w-44 ${
+        isSolid
+          ? "border-evp-sand text-evp-accent"
+          : "border-white/50 text-white/70"
+      }`}
+    >
+      <span className="font-secondary text-xs font-semibold tracking-widest uppercase">
+        Tu logo aquí
+      </span>
+    </a>
+  );
+}
 
 function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -40,14 +74,9 @@ function SiteHeader() {
         }`}
       >
         <div className="mx-auto flex w-[92%] max-w-6xl items-center justify-between gap-4 py-4 lg:gap-8 lg:py-5">
-          <a
-            className={`font-title text-2xl lg:text-3xl ${
-              headerSolid ? "text-evp-title" : "text-white"
-            }`}
-            href="#home"
-          >
-            Evelin Paiva
-          </a>
+
+          {/* ← LOGO HEADER */}
+          <LogoArea isSolid={headerSolid} />
 
           {/* Desktop Nav */}
           <nav className="hidden flex-1 lg:block">
@@ -56,7 +85,9 @@ function SiteHeader() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className={headerSolid ? "text-evp-body" : "text-white/85"}
+                    className={`font-secondary text-sm tracking-wide transition-colors hover:text-evp-accent ${
+                      headerSolid ? "text-evp-body" : "text-white/85"
+                    }`}
                   >
                     {link.label}
                   </a>
@@ -107,7 +138,8 @@ function SiteHeader() {
             {/* Menú Lateral */}
             <div className="absolute right-0 top-0 h-full w-4/5 max-w-sm bg-evp-bg shadow-2xl transition-transform">
               <div className="flex items-center justify-between border-b border-evp-border p-4">
-                <span className="font-title text-xl text-evp-title">Menu</span>
+                {/* ← LOGO MENÚ MÓVIL */}
+                <LogoArea isSolid={true} />
                 <button
                   onClick={() => setIsMenuOpen(false)}
                   className="p-2 text-evp-title"
@@ -134,7 +166,7 @@ function SiteHeader() {
                     key={link.href}
                     href={link.href}
                     onClick={() => setIsMenuOpen(false)}
-                    className="rounded-lg px-4 py-3 font-body font-medium text-evp-body hover:bg-evp-section hover:text-evp-accent"
+                    className="rounded-lg px-4 py-3 font-secondary text-sm font-medium text-evp-body hover:bg-evp-section hover:text-evp-accent"
                   >
                     {link.label}
                   </a>
@@ -160,3 +192,4 @@ function SiteHeader() {
 }
 
 export default SiteHeader;
+

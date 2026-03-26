@@ -1,3 +1,14 @@
+/* ─────────────────────────────────────────────────────────────
+   CONFIGURACIÓN DEL SITIO
+   Para activar el logo en el header y footer:
+   1. Coloca tu archivo de logo en public/images/ (ej: logo.svg)
+   2. Cambia logo: "" por logo: "/images/tu-logo.svg"
+   ───────────────────────────────────────────────────────────── */
+export const siteInfo = {
+  name: "Evelin Paiva",
+  logo: "/images/logo-evp.webp", // ← COLOCA LA RUTA DE TU LOGO AQUÍ (ej: "/images/logo.svg")
+};
+
 export const navLinks = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },

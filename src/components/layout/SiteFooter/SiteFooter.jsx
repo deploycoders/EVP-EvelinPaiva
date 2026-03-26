@@ -1,25 +1,51 @@
-import { navLinks } from "@/data/siteContent";
+import { navLinks, siteInfo } from "@/data/siteContent";
+
+/* ──────────────────────────────────────────────
+   LogoArea Footer — mismo sistema que el Header
+   → siteInfo.logo = "/images/tu-logo.svg"
+   ────────────────────────────────────────────── */
+function LogoArea() {
+  if (siteInfo?.logo) {
+    return (
+      <a href="#home" className="flex-shrink-0 bg-evp-accent p-1 rounded-md">
+        <img
+          src={siteInfo.logo}
+          alt={siteInfo.name ?? "Logo"}
+          className="h-10 w-auto object-contain lg:h-12"
+        />
+      </a>
+    );
+  }
+
+  /* ← COLOCA TU LOGO AQUÍ */
+  return (
+    <a
+      href="#home"
+      className="flex h-10 w-36 flex-shrink-0 items-center justify-center rounded-lg border-2 border-dashed border-evp-sand text-evp-accent transition-colors hover:border-evp-accent"
+    >
+      <span className="font-secondary text-xs font-semibold tracking-widest uppercase">
+        Tu logo aquí
+      </span>
+    </a>
+  );
+}
 
 function SiteFooter() {
   return (
-    <footer className="bg-evp-bg border-t border-evp-accent px-4 py-8 md:py-12">
+    <footer className="bg-evp-bg border-t border-evp-sand px-4 py-8 md:py-12">
       <div className="mx-auto flex w-[92%] max-w-7xl flex-col items-center justify-between gap-8 md:flex-row md:gap-4">
-        
-        {/* Logo / Brand Name */}
-        <div className="flex-shrink-0">
-          <a href="#home" className="font-title text-black text-xl font-bold tracking-widest transition-colors hover:text-evp-accent">
-            SCULPT BODY <span className="text-evp-accent">SPA</span>
-          </a>
-        </div>
+
+        {/* ← LOGO FOOTER */}
+        <LogoArea />
 
         {/* Navigation Links */}
         <nav aria-label="Footer navigation" className="flex-1">
-          <ul className="m-0 flex flex-wrap justify-center gap-6 md:gap-8 p-0 list-none text-xs font-bold uppercase tracking-widest text-white/70">
+          <ul className="m-0 flex flex-wrap justify-center gap-6 md:gap-8 p-0 list-none text-xs font-bold uppercase tracking-widest">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="transition-colors duration-300 text-black hover:text-evp-accent"
+                  className="font-secondary text-evp-body transition-colors duration-300 hover:text-evp-accent"
                 >
                   {link.label}
                 </a>
@@ -48,3 +74,4 @@ function SiteFooter() {
 }
 
 export default SiteFooter;
+

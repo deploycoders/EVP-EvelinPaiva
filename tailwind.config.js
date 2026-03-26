@@ -5,21 +5,27 @@ export default {
     extend: {
       colors: {
         evp: {
-          bg: "#F7F3F0",
-          section: "#EFE9E4",
-          accent: "#AD5D43",
-          "accent-deep": "#8A4833",
-          title: "#1A1A1A",
-          body: "#575757",
-          border: "#D9C5B2"
+          bg: "#f6f3f2",
+          section: "#f0ebe7",
+          accent: "#876247",
+          "accent-deep": "#6b4d38",
+          gold: "#ffe08f",
+          sand: "#e5c09d",
+          title: "#2a1f17",
+          body: "#5c4a3b",
+          border: "#e5c09d"
         }
       },
       fontFamily: {
-        title: ["Cormorant Garamond", "Times New Roman", "serif"],
-        body: ["Montserrat", "Segoe UI", "sans-serif"]
+        /* Tipografía Principal — TAN Aegean (self-hosted) / Playfair Display fallback */
+        title: ["TAN Aegean", "Playfair Display", "Georgia", "serif"],
+        /* Tipografía Secundaria — Glacial Indifference */
+        secondary: ["Glacial Indifference", "Helvetica Neue", "sans-serif"],
+        /* Tipografía Cuerpo — Open Sauce One */
+        body: ["Open Sauce One", "system-ui", "sans-serif"]
       },
       boxShadow: {
-        soft: "0 10px 30px rgb(26 26 26 / 8%)"
+        soft: "0 10px 30px rgb(42 31 23 / 10%)"
       }
     }
   },
