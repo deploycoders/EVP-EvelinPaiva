@@ -122,12 +122,12 @@ function LocationSection() {
           Ready to relax and renew?<br />
           Book your moment of <span className="italic text-evp-accent font-normal">wellness.</span>
         </h3>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="flex rounded-md flex-col sm:flex-row items-center justify-center gap-4">
           <a 
             href="https://wa.me/18136488496" 
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-3 bg-evp-accent-deep text-white text-xs font-bold uppercase tracking-widest transition-transform hover:scale-105"
+            className="px-8 py-3 rounded-md bg-evp-accent hover:bg-evp-accent-deep text-white text-xs font-bold uppercase tracking-widest transition-transform hover:scale-105"
           >
             BOOK VIA WHATSAPP
           </a>
