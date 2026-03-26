@@ -16,7 +16,7 @@ function LogoArea({ isSolid }) {
         <img
           src={siteInfo.logo}
           alt={siteInfo.name ?? "Logo"}
-          className="h-10 w-auto object-contain lg:h-12"
+          className="h-8 w-auto object-contain lg:h-10"
         />
       </a>
     );
