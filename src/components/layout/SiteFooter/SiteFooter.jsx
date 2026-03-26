@@ -29,7 +29,7 @@ function SiteFooter() {
         </nav>
 
         {/* Instagram Button */}
-        <div className="flex-shrink-0 bg-evp-accent rounded-md">
+        <div className="flex-shrink-0 bg-evp-accent rounded-md hover:bg-evp-accent-deep text-white text-xs font-bold uppercase tracking-widest transition-transform hover:scale-105">
           <a
             href="https://www.instagram.com/sculptbodyspa_"
             target="_blank"

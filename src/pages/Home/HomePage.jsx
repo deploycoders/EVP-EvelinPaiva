@@ -17,14 +17,14 @@ function HomePage() {
       <ManifestoBannerSection />
       <AboutSection />
       <ServicesSection />
-      {/* <RecoverySection /> */}
+      <RecoverySection />
       <TestimonialsSection />
 
-      {/* <InstagramSection /> */}
+      <InstagramSection />
 
-      {/* <LocationSection /> */}
+      <LocationSection />
 
-      {/* <SiteFooter /> */}
+      <SiteFooter />
     </div>
   );
 }

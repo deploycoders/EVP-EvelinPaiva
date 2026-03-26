@@ -10,7 +10,7 @@ function HeroSection() {
       <div
         className="absolute inset-0 bg-cover bg-no-repeat bg-[center_top] md:bg-[center_20%] lg:bg-center"
         style={{
-          backgroundImage: "url('/images/home/home.png')",
+          backgroundImage: "url('/images/home/home.webp')",
         }}
         aria-hidden="true"
       />

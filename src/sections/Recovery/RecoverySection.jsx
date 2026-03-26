@@ -37,7 +37,7 @@ function RecoverySection() {
         {/* Top Right Image Area */}
         <div className="w-full lg:w-1/2 h-[380px] md:h-[420px] lg:h-auto overflow-hidden">
           <img 
-            src="/images/services/services_deep.webp" 
+            src="/images/about/evelyn_about.webp" 
             alt="Skin treatment detail highlighting careful touch and recovery" 
             className="w-full h-full object-cover object-center"
           />
