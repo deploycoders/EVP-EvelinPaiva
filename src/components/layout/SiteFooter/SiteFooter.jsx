@@ -2,12 +2,12 @@ import { navLinks } from "@/data/siteContent";
 
 function SiteFooter() {
   return (
-    <footer className="bg-[#0b0c10] px-4 py-8 md:py-12 border-t border-evp-border/10">
+    <footer className="bg-evp-bg border-t border-evp-accent px-4 py-8 md:py-12">
       <div className="mx-auto flex w-[92%] max-w-7xl flex-col items-center justify-between gap-8 md:flex-row md:gap-4">
         
         {/* Logo / Brand Name */}
         <div className="flex-shrink-0">
-          <a href="#home" className="font-title text-xl font-bold tracking-widest text-white transition-colors hover:text-evp-accent">
+          <a href="#home" className="font-title text-black text-xl font-bold tracking-widest transition-colors hover:text-evp-accent">
             SCULPT BODY <span className="text-evp-accent">SPA</span>
           </a>
         </div>
@@ -19,7 +19,7 @@ function SiteFooter() {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="transition-colors duration-300 hover:text-white"
+                  className="transition-colors duration-300 text-black hover:text-evp-accent"
                 >
                   {link.label}
                 </a>
@@ -29,7 +29,7 @@ function SiteFooter() {
         </nav>
 
         {/* Instagram Button */}
-        <div className="flex-shrink-0">
+        <div className="flex-shrink-0 bg-evp-accent rounded-md">
           <a
             href="https://www.instagram.com/sculptbodyspa_"
             target="_blank"

@@ -5,7 +5,7 @@ function NewsletterSection() {
   const { title, description, inputPlaceholder, buttonText } = newsletterData;
 
   return (
-    <section className="bg-[#f8f5f1] py-24 px-4 w-full">
+    <section className="bg-[#ffff] py-24 px-4 w-full">
       <div className="max-w-3xl mx-auto text-center">
         <h2 className="font-serif text-3xl md:text-5xl text-gray-900 mb-6 font-normal">
           {title}
