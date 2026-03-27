@@ -173,9 +173,9 @@ export const locationData = {
   titleLine2: "Local <i class='italic font-normal'>essence.</i>",
   location: {
     title: "LOCATION",
-    addressPart1: "10641 Laguna Plains Dr",
-    addressPart2: "Suite 100",
-    cityStateZip: "Riverview, FL 33578"
+    addressPart1: "7821 N Dale Mabry Hwy",
+    addressPart2: "Suite 114",
+    cityStateZip: "TAMPA, FL 33614 US"
   },
   reachUs: {
     title: "REACH US",

@@ -83,7 +83,7 @@ function LocationSection() {
           <div className="relative w-full min-h-[400px] lg:h-auto lg:w-7/12 bg-[#E2DEDC] overflow-hidden">
              {/* Map embedded or simple styling, using iframe for actual functionality is better. */}
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2494.600385705442!2d-82.33133433864545!3d27.843681829761273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sve!4v1774371746601!5m2!1ses-419!2sve" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d622.6351113460817!2d-82.50374537533807!3d28.019705145047713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88c2c16c17655555%3A0x4888f5c12c4eb541!2s7821%20N%20Dale%20Mabry%20Hwy%20Suite%20114%2C%20Tampa%2C%20FL%2033614%2C%20EE.%20UU.!5e0!3m2!1ses-419!2sve!4v1774653358894!5m2!1ses-419!2sve" 
               width="100%" 
               height="100%" 
               style={{ border: 0, minHeight: '100%', filter: 'grayscale(100%) opacity(0.8) contrast(1.1) brightness(1.1)' }} 
@@ -102,7 +102,7 @@ function LocationSection() {
                   {mapCard.description}
               </p>
               <a 
-                href="https://maps.app.goo.gl/zr2wKZRXuUaiXvXTA" 
+                href="https://maps.app.goo.gl/pjJDXN58SyRy6AHh7" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center text-xs font-bold uppercase tracking-[0.15em] text-evp-title transition-colors hover:text-evp-accent"
